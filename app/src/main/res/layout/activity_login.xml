@@ -14,8 +14,10 @@
         android:src="@drawable/image_background_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_label"
@@ -53,7 +55,7 @@
             android:id="@+id/text_edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:background="@drawable/bg_input"
             android:inputType="textEmailAddress"
             android:textColor="@color/white" />
 
@@ -68,6 +70,8 @@
         android:background="#52000000"
         android:hint="@string/senha"
         android:textColorHint="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:boxStrokeColor="#52000000"
         app:hintTextColor="#80FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +82,7 @@
             android:id="@+id/text_edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:background="@drawable/bg_input"
             android:inputType="textPassword"
             android:textColor="@color/white" />
 

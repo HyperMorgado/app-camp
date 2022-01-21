@@ -1,8 +1,8 @@
 package com.example.camp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import com.google.android.material.button.MaterialButton
@@ -19,14 +19,14 @@ class LoginActivity : AppCompatActivity() {
         val textRegister = findViewById<AppCompatTextView>(R.id.text_register)
 
         button.setOnClickListener {
-            textError.visibility = View.VISIBLE
+            val intent = Intent(this, BookListActivity::class.java)
+            startActivity(intent)
         }
 
         textRegister.setOnClickListener {
             //TODO: implementar
             Toast.makeText(this, "Novo registro de usuário", Toast.LENGTH_SHORT).show()
         }
-
 
     }
 }

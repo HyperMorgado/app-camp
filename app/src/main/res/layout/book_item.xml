@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="4dp"
+    android:background="@android:color/white"
+    android:elevation="28dp"
+    app:cardCornerRadius="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="2dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_book"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_book_title"
+            style="@style/Book_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="@id/image_book"
+            app:layout_constraintLeft_toRightOf="@id/image_book"
+            tools:text="Crossing the chasm" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_book_subtitle"
+            style="@style/Book_SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintLeft_toRightOf="@id/image_book"
+            app:layout_constraintTop_toBottomOf="@+id/text_book_title"
+            tools:text="George " />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_book_pages"
+            style="@style/Book_Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@id/text_book_editor"
+            app:layout_constraintLeft_toRightOf="@id/image_book"
+            tools:text="150 Páginas" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_book_editor"
+            style="@style/Book_Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@id/text_book_date"
+            app:layout_constraintLeft_toRightOf="@id/image_book"
+            tools:text="Editora Loyola" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_book_date"
+            style="@style/Book_Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/image_book"
+            app:layout_constraintLeft_toRightOf="@id/image_book"
+            tools:text="Publicado em 2020" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

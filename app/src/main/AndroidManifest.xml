@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Camp">
         <activity
-            android:name=".BookListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

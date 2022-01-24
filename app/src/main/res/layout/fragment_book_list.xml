@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@drawable/bg_book_list"
-    tools:context=".BookListActivity">
+    tools:context=".fragments.BookListFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_label"

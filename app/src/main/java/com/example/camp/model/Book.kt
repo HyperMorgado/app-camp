@@ -9,7 +9,7 @@ data class Book (
     val date: String = "Publicado em 2020"
 ) {
     companion object {
-        fun getMookList() = listOf(
+        fun getMockList() = listOf(
             Book(
                 id = 1,
                 name = "Crossing the Clasm"
@@ -31,5 +31,18 @@ data class Book (
                 name = "Web design 101"
             )
         )
+
+        fun getMockListCount(count: Int): List<Book> {
+            val mockList = mutableListOf<Book>()
+            for(id in 1..count) {
+                mockList.add(
+                    Book(
+                        id = id,
+                        name = "Crossing the Chasm"
+                    )
+                )
+            }
+            return mockList
+        }
     }
 }

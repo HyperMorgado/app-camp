@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.example.camp.adapter.BookClickListener
 import com.example.camp.adapter.BookListAdapter
 import com.example.camp.databinding.FragmentBookListBinding
 import com.example.camp.model.Book
 
-class BookListFragment : Fragment() {
+class BookListFragment : Fragment(), BookClickListener {
 
     private val args: BookListFragmentArgs by navArgs()
     private lateinit var bookListAdapter: BookListAdapter
@@ -27,17 +28,24 @@ class BookListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setBookListData()
-        args.itemCount
     }
 
     private fun setBookListData() {
-        bookListAdapter = BookListAdapter()
+        bookListAdapter = BookListAdapter(this)
         binding.rvBooks.adapter = bookListAdapter
-        bookListAdapter.submitList(Book.getMockListCount(args.itemCount))
+        bookListAdapter.submitList(
+            Book.getMockListCount(
+                args.itemCount
+            )
+        )
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onBookClickListener(book: Book) {
+        BookDetailsBottomSheet.newInstance(book).show(childFragmentManager, "book")
     }
 }

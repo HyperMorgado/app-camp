@@ -1,19 +1,19 @@
 package com.example.camp.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.camp.R
+import com.example.camp.databinding.BookItemBinding
 import com.example.camp.model.Book
 
-class BookListAdapter: ListAdapter<Book, BookListAdapter.BookListViewHolder>(DIFF_CALLBACK) {
+class BookListAdapter(
+    private val onBookClickListener: BookClickListener
+): ListAdapter<Book, BookListAdapter.BookListViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookListViewHolder {
-        return BookListViewHolder.create(parent)
+        return BookListViewHolder.create(parent, onBookClickListener)
     }
 
     override fun onBindViewHolder(holder: BookListViewHolder, position: Int) {
@@ -33,26 +33,35 @@ class BookListAdapter: ListAdapter<Book, BookListAdapter.BookListViewHolder>(DIF
         }
     }
 
-    class BookListViewHolder(view: View): RecyclerView.ViewHolder(view) {
-
-            private val bookTitle: AppCompatTextView = view.findViewById(R.id.text_book_title)
-            private val bookAuthor: AppCompatTextView = view.findViewById(R.id.text_book_subtitle)
-            private val bookPages: AppCompatTextView = view.findViewById(R.id.text_book_pages)
-            private val bookEditor: AppCompatTextView = view.findViewById(R.id.text_book_editor)
-            private val bookDate: AppCompatTextView = view.findViewById(R.id.text_book_date)
-
+    class BookListViewHolder(
+       private val binding: BookItemBinding,
+       private val onBookClickListener: BookClickListener
+    ): RecyclerView.ViewHolder(binding.root) {
             fun bind(book: Book) {
-                bookTitle.text = book.name
-                bookAuthor.text = book.author
-                bookPages.text = book.pages
-                bookEditor.text = book.editor
-                bookDate.text = book.date
+                binding.apply {
+                    textBookTitle.text = book.name
+                    textBookSubtitle.text = book.author
+                    textBookPages.text = book.pages
+                    textBookEditor.text = book.editor
+                    textBookDate.text = book.date
+
+                    root.setOnClickListener {
+                        onBookClickListener.onBookClickListener(book)
+                    }
+                }
             }
 
             companion object {
-                fun create(parent:ViewGroup): BookListViewHolder {
-                    val view = LayoutInflater.from(parent.context).inflate(R.layout.book_item, parent, false)
-                    return BookListViewHolder(view)
+                fun create(
+                    parent:ViewGroup,
+                    onBookClickListener: BookClickListener
+                ): BookListViewHolder {
+                    val binding = BookItemBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                    return BookListViewHolder(binding, onBookClickListener)
                 }
             }
     }

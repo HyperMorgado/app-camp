@@ -1,4 +1,4 @@
-package com.example.camp.model
+package com.example.camp.domain.model
 
 data class Book (
     val id: Int,

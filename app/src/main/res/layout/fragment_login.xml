@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.LoginFragment">
+    tools:context=".presentation.ui.fragments.LoginFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_background"
@@ -55,7 +55,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_input"
             android:inputType="textEmailAddress"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:singleLine="true"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -124,4 +125,17 @@
         app:layout_constraintTop_toBottomOf="@id/text_error"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
+    
+    <ProgressBar
+        android:id="@+id/progress_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

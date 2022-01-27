@@ -1,4 +1,4 @@
-package com.example.camp.custom_views
+package com.example.camp.presentation.ui.custom_views
 
 import android.content.Context
 import android.util.AttributeSet

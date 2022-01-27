@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@drawable/bg_book_list"
-    tools:context=".fragments.BookListFragment">
+    tools:context=".presentation.ui.fragments.BookListFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_label"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="@id/text_label"
         app:layout_constraintBottom_toBottomOf="@id/text_label" />
 
-    <com.example.camp.custom_views.CustomSearchInput
+    <com.example.camp.presentation.ui.custom_views.CustomSearchInput
         android:id="@+id/edit_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

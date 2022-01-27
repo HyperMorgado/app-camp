@@ -1,4 +1,4 @@
-package com.example.camp.fragments
+package com.example.camp.presentation.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.example.camp.adapter.BookClickListener
-import com.example.camp.adapter.BookListAdapter
+import com.example.camp.presentation.adapter.BookClickListener
+import com.example.camp.presentation.adapter.BookListAdapter
 import com.example.camp.databinding.FragmentBookListBinding
-import com.example.camp.model.Book
+import com.example.camp.domain.model.Book
 
 class BookListFragment : Fragment(), BookClickListener {
 

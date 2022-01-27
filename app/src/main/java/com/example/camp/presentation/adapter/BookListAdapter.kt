@@ -1,4 +1,4 @@
-package com.example.camp.adapter
+package com.example.camp.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.camp.databinding.BookItemBinding
-import com.example.camp.model.Book
+import com.example.camp.domain.model.Book
 
 class BookListAdapter(
     private val onBookClickListener: BookClickListener

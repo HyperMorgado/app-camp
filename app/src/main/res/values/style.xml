@@ -19,7 +19,7 @@
 
     <style name="List_Empty">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/title_50</item>
+        <item name="android:textColor">@color/subtitle</item>
         <item name="android:textAlignment">center</item>
     </style>
 

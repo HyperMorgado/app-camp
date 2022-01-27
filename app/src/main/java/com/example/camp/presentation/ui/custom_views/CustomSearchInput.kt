@@ -38,7 +38,6 @@ class CustomSearchInput @JvmOverloads constructor(
             input.hint = customHint
 
             attributes.recycle()
-
         }
     }
 

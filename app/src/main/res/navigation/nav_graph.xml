@@ -21,10 +21,5 @@
         android:id="@+id/bookListFragment"
         android:name="com.example.camp.presentation.ui.fragments.BookListFragment"
         android:label="fragment_book_list"
-        tools:layout="@layout/fragment_book_list" >
-        <argument
-            android:name="itemCount"
-            app:argType="integer"
-            android:defaultValue="1" />
-    </fragment>
+        tools:layout="@layout/fragment_book_list" />
 </navigation>

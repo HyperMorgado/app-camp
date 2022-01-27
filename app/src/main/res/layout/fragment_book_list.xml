@@ -55,8 +55,24 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_search"
-        tools:listitem="@layout/book_item"/>
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/book_item" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_empty_list"
+        android:layout_width="399dp"
+        android:layout_height="85dp"
+        android:text="@string/nao_encontramos_nenhum_livro"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_books"
+        app:layout_constraintVertical_bias="0.254"
+        tools:visibility="visible"
+        style="@style/List_Empty" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

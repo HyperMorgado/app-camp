@@ -3,9 +3,11 @@ package com.example.camp.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.camp.domain.repositories.LoginRepository
-import com.example.camp.util.ViewState
-import com.example.camp.util.postNeutral
+import com.example.camp.util.*
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class LoginViewModel(
     private val loginRepository: LoginRepository
@@ -16,20 +18,22 @@ class LoginViewModel(
 
     fun login(email: String, password: String) {
 
-        //loginRepository.login()
-
-       /*viewModelScope.launch {
+       viewModelScope.launch {
 
             _loggedUserViewState.postLoading()
 
-            delay(2_000)
-
-            if(email.isNotEmpty() && password.isNotEmpty()) {
-                _loggedUserViewState.postSuccess(true)
-            }else {
-                _loggedUserViewState.postError(LoginException())
-            }
-        }*/
+           try {
+                loginRepository.login(email, password).collect {
+                    if(it.name.isEmpty().not()) {
+                        _loggedUserViewState.postSuccess(true)
+                    }else {
+                        _loggedUserViewState.postError(Exception("Body do usuário vazio"))
+                    }
+                }
+           }catch (err: Exception) {
+               _loggedUserViewState.postError(err)
+           }
+        }
     }
 
     fun resetViewState() {

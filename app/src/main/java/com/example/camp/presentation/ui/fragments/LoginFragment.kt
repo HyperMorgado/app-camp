@@ -1,16 +1,16 @@
 package com.example.camp.presentation.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.camp.databinding.FragmentLoginBinding
 import com.example.camp.presentation.viewmodel.LoginViewModel
 import com.example.camp.util.ViewState
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
@@ -18,7 +18,7 @@ class LoginFragment : Fragment() {
     private val binding: FragmentLoginBinding get() = _binding!!
 
     //faz a injeção de dependência do viewModel
-    private val viewModel : LoginViewModel by viewModels()
+    private val loginViewModel : LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +36,7 @@ class LoginFragment : Fragment() {
     private fun setListener() {
         binding.buttonEnter.setOnClickListener {
                 binding.run {
-                    viewModel.login(
+                    loginViewModel.login(
                         textEditEmail.text.toString(),
                         textEditPassword.text.toString()
                     )
@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
 
     //observa o liveData que está na viewModel
     private fun addObserver() {
-        viewModel.loggedUserViewState.observe(viewLifecycleOwner) { state ->
+        loginViewModel.loggedUserViewState.observe(viewLifecycleOwner) { state ->
             when(state) {
                 is ViewState.Success -> {
                     findNavController().navigate(
@@ -62,6 +62,7 @@ class LoginFragment : Fragment() {
                     )
                 }
                 is ViewState.Error -> {
+                    binding.textError.text = state.throwable.message
                     binding.progressDialog.visibility = View.GONE
                     binding.textError.visibility = View.VISIBLE
                 }
@@ -74,7 +75,7 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        viewModel.resetViewState()
+        loginViewModel.resetViewState()
         _binding = null
     }
 }

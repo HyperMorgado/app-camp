@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.camp.domain.exception.EmptyBookLIstException
 import com.example.camp.domain.model.Book
-import com.example.camp.domain.model.exception.EmptyBookLIstException
 import com.example.camp.util.ViewState
 import com.example.camp.util.postError
 import com.example.camp.util.postSuccess

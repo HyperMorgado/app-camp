@@ -3,20 +3,22 @@ package com.example.camp.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.camp.domain.model.exception.LoginException
-import com.example.camp.util.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.example.camp.domain.repositories.LoginRepository
+import com.example.camp.util.ViewState
+import com.example.camp.util.postNeutral
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel(
+    private val loginRepository: LoginRepository
+) : ViewModel() {
 
     private val _loggedUserViewState = MutableLiveData<ViewState<Boolean>>()
     var loggedUserViewState = _loggedUserViewState as LiveData<ViewState<Boolean>>
 
     fun login(email: String, password: String) {
 
-        viewModelScope.launch {
+        //loginRepository.login()
+
+       /*viewModelScope.launch {
 
             _loggedUserViewState.postLoading()
 
@@ -27,7 +29,7 @@ class LoginViewModel : ViewModel() {
             }else {
                 _loggedUserViewState.postError(LoginException())
             }
-        }
+        }*/
     }
 
     fun resetViewState() {

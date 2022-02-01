@@ -1,16 +1,16 @@
 package com.example.camp.presentation.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.camp.databinding.FragmentBookListBinding
+import com.example.camp.domain.exception.EmptyBookLIstException
+import com.example.camp.domain.model.Book
 import com.example.camp.presentation.adapter.BookClickListener
 import com.example.camp.presentation.adapter.BookListAdapter
-import com.example.camp.databinding.FragmentBookListBinding
-import com.example.camp.domain.model.Book
-import com.example.camp.domain.model.exception.EmptyBookLIstException
 import com.example.camp.presentation.viewmodel.BookListViewModel
 import com.example.camp.util.ViewState
 

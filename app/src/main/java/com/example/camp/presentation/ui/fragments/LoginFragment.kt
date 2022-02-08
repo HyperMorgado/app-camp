@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.camp.databinding.FragmentLoginBinding
 import com.example.camp.presentation.viewmodel.LoginViewModel
 import com.example.camp.util.ViewState
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class LoginFragment : Fragment() {
 
@@ -18,7 +18,9 @@ class LoginFragment : Fragment() {
     private val binding: FragmentLoginBinding get() = _binding!!
 
     //faz a injeção de dependência do viewModel
-    private val loginViewModel : LoginViewModel by viewModel()
+    private val loginViewModel : LoginViewModel by lazy {
+            getViewModel()
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,7 +60,7 @@ class LoginFragment : Fragment() {
             when(state) {
                 is ViewState.Success -> {
                     findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToBookListFragment()
+                        LoginFragmentDirections.actionLoginFragmentToBookListFragment(accessToken = state.data)
                     )
                 }
                 is ViewState.Error -> {

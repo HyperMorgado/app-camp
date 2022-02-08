@@ -11,7 +11,7 @@
         android:layout_height="wrap_content" >
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/button_close"
+            android:id="@+id/buttonClose"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:contentDescription="@string/fechar"
@@ -21,25 +21,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/image_big_book_container"
+            android:id="@+id/imageBigBookContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_close"
+            app:layout_constraintTop_toBottomOf="@id/buttonClose"
             app:cardElevation="24dp" >
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_big_book"
+                android:id="@+id/imageBigBook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/big_book" />
+                tools:src="@drawable/big_book" />
 
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_book_name"
+            android:id="@+id/textViewBookName"
             android:layout_width="match_parent"
             android:layout_height="86dp"
             android:layout_marginStart="40dp"
@@ -53,11 +53,11 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_big_book_container"
+            app:layout_constraintTop_toBottomOf="@id/imageBigBookContainer"
             tools:text="Change By Design Second Line exame alguma coisa e tal" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_authors"
+            android:id="@+id/textViewAuthors"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -68,11 +68,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_book_name"
+            app:layout_constraintTop_toBottomOf="@id/textViewBookName"
             tools:text="Tim Brow, Julia Zhuo" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_info"
+            android:id="@+id/textViewInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -84,7 +84,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_authors" />
+            app:layout_constraintTop_toBottomOf="@id/textViewAuthors" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/labels_container"
@@ -99,52 +99,52 @@
             android:paddingEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_info">
+            app:layout_constraintTop_toBottomOf="@id/textViewInfo">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_pages"
+                android:id="@+id/textViewLabelPages"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/paginas" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_editor"
+                android:id="@+id/textViewLabelEditor"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/editora" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_date_publication"
+                android:id="@+id/textViewLabelDatePublication"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/publicao" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_language"
+                android:id="@+id/textViewLabelLanguage"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/idioma" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_original_title"
+                android:id="@+id/textViewLabelOriginalTitle"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_original" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_isbn_10"
+                android:id="@+id/textViewLabelIsbn_10"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/isbn_10" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_label_isbn_13"
+                android:id="@+id/textViewLabelIsbn_13"
                 style="@style/Book_Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_review"
+            android:id="@+id/textViewReview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -168,7 +168,7 @@
             app:layout_constraintTop_toBottomOf="@id/labels_container" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/review_container"
+            android:id="@+id/reviewContainer"
             android:layout_width="323dp"
             android:layout_height="186dp"
             android:layout_marginTop="8dp"
@@ -179,15 +179,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.625"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view_review">
+            app:layout_constraintTop_toBottomOf="@id/textViewReview">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_review"
+                android:id="@+id/textReview"
                 style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/review_container"
+                app:layout_constraintTop_toBottomOf="@id/reviewContainer"
                 tools:text="This book describes how Design Thinking is applied across a variety of industries, enriched with other proven approaches as well as the necessary tools, and the knowledge to use them effectively. Packed with solutions for common challenges including digital transformation, this practical, highly visual discussion shows you how Design Thinking fits into agile methods within management, innovation, and startups." />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

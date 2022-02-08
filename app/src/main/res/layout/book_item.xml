@@ -21,7 +21,7 @@
         android:paddingVertical="2dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_book"
+            android:id="@+id/imageBook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/image_book"
@@ -30,57 +30,57 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_book_title"
+            android:id="@+id/textBookTitle"
             style="@style/Book_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            app:layout_constraintTop_toTopOf="@id/image_book"
-            app:layout_constraintLeft_toRightOf="@id/image_book"
+            app:layout_constraintTop_toTopOf="@id/imageBook"
+            app:layout_constraintLeft_toRightOf="@id/imageBook"
             tools:text="Crossing the chasm" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_book_subtitle"
+            android:id="@+id/textBookSubtitle"
             style="@style/Book_SubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintLeft_toRightOf="@id/image_book"
-            app:layout_constraintTop_toBottomOf="@+id/text_book_title"
+            app:layout_constraintLeft_toRightOf="@id/imageBook"
+            app:layout_constraintTop_toBottomOf="@+id/textBookTitle"
             tools:text="George " />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_book_pages"
+            android:id="@+id/textBookPages"
             style="@style/Book_Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@id/text_book_editor"
-            app:layout_constraintLeft_toRightOf="@id/image_book"
+            app:layout_constraintBottom_toTopOf="@id/textBookEditor"
+            app:layout_constraintLeft_toRightOf="@id/imageBook"
             tools:text="150 Páginas" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_book_editor"
+            android:id="@+id/textBookEditor"
             style="@style/Book_Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@id/text_book_date"
-            app:layout_constraintLeft_toRightOf="@id/image_book"
+            app:layout_constraintBottom_toTopOf="@id/textBookDate"
+            app:layout_constraintLeft_toRightOf="@id/imageBook"
             tools:text="Editora Loyola" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_book_date"
+            android:id="@+id/textBookDate"
             style="@style/Book_Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="@id/image_book"
-            app:layout_constraintLeft_toRightOf="@id/image_book"
+            app:layout_constraintBottom_toBottomOf="@id/imageBook"
+            app:layout_constraintLeft_toRightOf="@id/imageBook"
             tools:text="Publicado em 2020" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

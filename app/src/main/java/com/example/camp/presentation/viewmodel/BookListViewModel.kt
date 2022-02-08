@@ -20,11 +20,11 @@ class BookListViewModel(
     private val _bookListViewState = MutableLiveData<ViewState<List<Book>>>()
     val bookListViewState = _bookListViewState as LiveData<ViewState<List<Book>>>
 
-    fun search(input: String = "") {
+    fun search(input: String = "", accessToken: String) {
         viewModelScope.launch {
             _bookListViewState.postLoading()
             try {
-                booksRepository.getBooks(accessToken = "123", input).collect {
+                booksRepository.getBooks(accessToken, input).collect {
                     if(it.isNotEmpty()) {
                         _bookListViewState.postSuccess(it)
                     }else {

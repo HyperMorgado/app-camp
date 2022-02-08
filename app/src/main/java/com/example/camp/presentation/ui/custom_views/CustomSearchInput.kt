@@ -19,7 +19,7 @@ class CustomSearchInput @JvmOverloads constructor(
     private val view = LayoutInflater.from(context).inflate(R.layout.custom_search_input, this, true)
 
     private val input: TextInputEditText by lazy {
-        view.findViewById(R.id.input_search)
+        view.findViewById(R.id.inputSearch)
     }
 
     var textChangedList: (input: String) -> Unit = {}

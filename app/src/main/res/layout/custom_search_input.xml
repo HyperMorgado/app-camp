@@ -6,7 +6,7 @@
     android:layout_height="match_parent" >
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_search"
+        android:id="@+id/inputSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_gray_with_corner"

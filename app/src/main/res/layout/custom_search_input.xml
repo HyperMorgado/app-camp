@@ -13,7 +13,7 @@
         android:drawableStart="@drawable/ic_search_icon"
         android:drawablePadding="16dp"
         android:padding="12dp"
-        android:textColorHint="#80333333"
+        android:textColorHint="@color/hint_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

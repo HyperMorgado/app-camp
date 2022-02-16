@@ -11,11 +11,11 @@
         <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/activity_book_list.xml" value="0.5" />
         <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/activity_login.xml" value="0.17937219730941703" />
         <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/book_details_bottom_sheet.xml" value="0.1" />
+        <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/book_details_bottom_sheet.xml" value="0.22" />
         <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/book_item.xml" value="0.1" />
         <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/custom_search_input.xml" value="0.1" />
-        <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/fragment_book_list.xml" value="0.1" />
-        <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/fragment_book_list.xml" value="0.25" />
+        <entry key="..\:/projetos-android-kotlin/Camp/app/src/main/res/layout/fragment_login.xml" value="0.5" />
       </map>
     </option>
   </component>

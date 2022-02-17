@@ -1,9 +1,9 @@
 package com.example.camp.di
 
-import com.example.camp.data.datasource.BooksDataSource
-import com.example.camp.data.datasource.LoginDataSource
-import com.example.camp.data_remote.datasource.BooksDataSourceImpl
-import com.example.camp.data_remote.datasource.LoginDataSourceImpl
+import com.example.camp.data.datasource.remote.BooksRemoteDataSource
+import com.example.camp.data.datasource.remote.LoginRemoteDataSource
+import com.example.camp.data_remote.datasource.BooksRemoteDataSourceImpl
+import com.example.camp.data_remote.datasource.LoginRemoteDataSourceImpl
 import com.example.camp.data_remote.service.AuthService
 import com.example.camp.data_remote.service.BookService
 import com.example.camp.data_remote.utils.ApiConstants
@@ -27,11 +27,11 @@ val dataRemoteModule = module {
 
     single { WebServiceFactory.providerOkHttpClient() }
 
-    single<LoginDataSource> {
-        LoginDataSourceImpl(get())
+    single<LoginRemoteDataSource> {
+        LoginRemoteDataSourceImpl(get())
     }
 
-    single<BooksDataSource> {
-        BooksDataSourceImpl(get())
+    single<BooksRemoteDataSource> {
+        BooksRemoteDataSourceImpl(get())
     }
 }

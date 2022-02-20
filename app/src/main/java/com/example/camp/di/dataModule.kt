@@ -12,6 +12,6 @@ val dataModule = module {
     }
 
     single<BooksRepository> {
-        BooksRepositoryImpl(get())
+        BooksRepositoryImpl(get(), get())
     }
 }

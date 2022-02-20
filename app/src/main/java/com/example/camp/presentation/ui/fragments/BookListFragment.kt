@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.navArgs
 import com.example.camp.databinding.FragmentBookListBinding
 import com.example.camp.domain.exception.EmptyBookLIstException
 import com.example.camp.domain.model.Book
@@ -23,8 +22,6 @@ class BookListFragment : Fragment(), BookClickListener {
 
     private val bookViewModel: BookListViewModel by viewModel()
 
-    private val args: BookListFragmentArgs by navArgs()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,14 +38,14 @@ class BookListFragment : Fragment(), BookClickListener {
 
     private fun configureListener() {
         binding.editSearch.textChangedList = { input ->
-            bookViewModel.search(input, args.accessToken)
+            bookViewModel.search(input)
         }
     }
 
     private fun setBookListData() {
         bookListAdapter = BookListAdapter(this)
         binding.rvBooks.adapter = bookListAdapter
-        bookViewModel.search(accessToken = args.accessToken)
+        bookViewModel.search()
     }
 
     private fun addObserver() {

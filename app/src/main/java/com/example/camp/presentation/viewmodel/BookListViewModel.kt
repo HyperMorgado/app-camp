@@ -10,8 +10,10 @@ import com.example.camp.util.ViewState
 import com.example.camp.util.postError
 import com.example.camp.util.postLoading
 import com.example.camp.util.postSuccess
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class BookListViewModel(
     private val booksRepository: BooksRepository
@@ -24,15 +26,34 @@ class BookListViewModel(
         viewModelScope.launch {
             _bookListViewState.postLoading()
             try {
-                booksRepository.getBooks(input).collect {
-                    if(it.isNotEmpty()) {
-                        _bookListViewState.postSuccess(it)
-                    }else {
-                        _bookListViewState.postError(Exception("Algo deu errado"))
+                withContext(Dispatchers.IO) {
+                    booksRepository.getBooks(input).collect {
+                        withContext(Dispatchers.Main) {
+                            if(it.isNotEmpty()) {
+                                saveBooks(bookList = it)
+                                _bookListViewState.postSuccess(it)
+                            }else {
+                                _bookListViewState.postError(Exception("Algo deu errado"))
+                            }
+                        }
                     }
                 }
             } catch(err: Exception) {
-                _bookListViewState.postError(err)
+                withContext(Dispatchers.Main) {
+                    _bookListViewState.postError(err)
+                }
+            }
+        }
+    }
+
+    private fun saveBooks(bookList: List<Book>) {
+        viewModelScope.launch {
+            try {
+                withContext(Dispatchers.IO) {
+                    booksRepository.saveBooks(bookList = bookList)
+                }
+            }catch (err: Exception) {
+                return@launch
             }
         }
     }

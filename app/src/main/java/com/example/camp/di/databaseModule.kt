@@ -10,11 +10,13 @@ val databaseModule = module {
 
     //mostra para o koin como criar uma instância do banco de dados
     single {
+
         Room.databaseBuilder(
             androidContext(),
             BookDatabase::class.java,
             BOOK_DATABASE_NAME
-        ).build()
+
+        ).allowMainThreadQueries().build()
     }
 
 

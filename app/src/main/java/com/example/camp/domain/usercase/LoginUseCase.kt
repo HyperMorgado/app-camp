@@ -4,20 +4,22 @@ import com.example.camp.domain.exception.InvalidEmailException
 import com.example.camp.domain.exception.InvalidPasswordException
 import com.example.camp.domain.model.User
 import com.example.camp.domain.repositories.LoginRepository
+import com.example.camp.domain.utils.UseCase
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 class LoginUseCase(
-    private val loginRepository: LoginRepository
-) {
+    private val loginRepository: LoginRepository,
+    scope: CoroutineScope
+) : UseCase<LoginUseCase.Params, User>(scope = scope) {
 
-    //faz a ponte com a camada de repository para fazer o login
-    operator fun invoke(params: Params): Flow<User> = when {
-        params.email.isEmpty() -> throw InvalidEmailException()
-        params.password.isEmpty() -> throw InvalidPasswordException()
+    override fun run(params: Params?): Flow<User> = when {
+        params?.email?.isEmpty() == true -> throw InvalidEmailException()
+        params?.password?.isEmpty() == true -> throw InvalidPasswordException()
         else -> {
             loginRepository.login(
-                email = params.email,
-                password = params.password
+                email = params?.email ?: "",
+                password = params?.password ?: ""
             )
         }
     }
@@ -26,6 +28,5 @@ class LoginUseCase(
         val email: String,
         val password: String
     )
-
 
 }

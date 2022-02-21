@@ -11,7 +11,8 @@ interface BookService {
     @GET("books")
     suspend fun getBooks(
         @Header("Authorization") accessToken: String,
-        @Query("page") page: Int
+        @Query("page") page: Int,
+        @Query("title") title: String?
 
     ):
         Response<BooksListResponse>
